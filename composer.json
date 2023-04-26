@@ -1,0 +1,16 @@
+{
+    "name": "muver1337/practic-pnss",
+    "description": "Практика на стороне сервера",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4 | ^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Src\\": "core/Src/",
+            "": "app/"
+        }
+    }
+}
