@@ -31,5 +31,10 @@ class Settings
     {
         return '/' . $this->path['views'] ?? '';
     }//Возвращает путь до папки с views
+    public function getDbSetting(): array
+    {
+        return $this->db ?? [];
+    }
+
 }
 
