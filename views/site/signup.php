@@ -1,6 +1,6 @@
 <div class="lol">
 <form class="forms" method="post">
-    <label>Логин <input type="text" name="login"></label>
+    <label>Логин <input type="text" value="<?= app()->auth::generateCSRF() ?>" name="csrf_token"></label>
     <h6> Роль: </h6>
     <select class="form-select" aria-label="Default select example" name="role_id">
         <?php

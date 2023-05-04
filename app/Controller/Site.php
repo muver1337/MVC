@@ -1,6 +1,8 @@
 <?php
+
 namespace Controller;
 
+use Src\Validator\Validator;
 use Model\Worker;
 use Model\Division;
 use Model\Discipline;
@@ -21,11 +23,33 @@ class Site
     }
 
     public function signup(Request $request): string
-    {   $roles = Role::all();
+    {
+        if ($request->method === 'POST') {
+
+            $validator = new Validator($request->all(), [
+                'login' => ['required', 'unique:users,login'],
+                'role' =>['required'],
+                'password' => ['required']
+            ], [
+                'required' => 'Поле :field пусто',
+                'unique' => 'Поле :field должно быть уникально'
+            ]);
+
+            if ($validator->fails()) {
+                return new View('site.signup',
+                    ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
+            }
+
+            if (User::create($request->all())) {
+                app()->route->redirect('/login');
+            }
+        }
+
+        $roles = Role::all();
         if ($request->method === 'POST' && User::create($request->all())) {
             app()->route->redirect('/hello');
         }
-        return new View('site.signup', ['roles'=>$roles]);
+        return new View('site.signup', ['roles' => $roles]);
     }
 
     public function login(Request $request): string
@@ -46,7 +70,7 @@ class Site
     {
         $discipline = Discipline::all();
         return new View('site.discipline', [
-            'discipline'=>$discipline,
+            'discipline' => $discipline,
         ]);
     }
 
@@ -54,7 +78,7 @@ class Site
     {
         $division = Division::all();
         return new View('site.division', [
-            'division'=>$division,
+            'division' => $division,
         ]);
     }
 
@@ -62,7 +86,7 @@ class Site
     {
         $worker = Worker::all();
         return new View('site.worker', [
-            'worker'=>$worker,
+            'worker' => $worker,
         ]);
     }
 
