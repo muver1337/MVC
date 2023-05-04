@@ -1,3 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .lol {
     margin-left: 30px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.login {
+    position: absolute;
+    top: 16px;
+}
+
+.hello {
+    width: 64px;
+    position: absolute;
+    margin-left: 1%;
+    text-align: center;
+    top: 16px;
+}
+
+.reg {
+    position: absolute;
+    margin-left: 7%;
+    top: 16px;
+}
+
+.logout {
+    top: 16px;
+    position: absolute;
+    margin-left: 7%;
+}
+
+.dis {
+    top: 16px;
+    position: absolute;
+    margin-left: 34%;
+}
+
+.work {
+    top: 16px;
+    position: absolute;
+    margin-left: 21%;
+}
+
+.pod {
+    top: 16px;
+    position: absolute;
+    margin-left: 41%;
+}
+
+.forms {
+    margin-left: 43%;
+    margin-right: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15%;
+}
+
+.forms2 {
+    margin-left: 2.5%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+
+button {
+    margin-top: 2%;
+    width: 207px;
+    display: block;
+    background-color: #ffffff;
+}
+
+label {
+    width: 100px;
+}
+
+.auth {
+    color: #525252;
+    margin-top: -20px ;
+}
+
+form>h4 {
+    color: red;
+    margin-left: -4%;
+}
+
+div>h1 {
+    margin-top: 3%;
+    font-size: 28px;
+    margin-left: 2%;
+}
+
+header>nav>a:last-child {
+    margin-left: 85%;
+}
+
+.role {
+    width: 100px;
+}
+
+.code {
+    width: 200px;
+}
+
+.form-select {
+    width: 11.3%;
+}
+
+.diss {
+    color: red;
+}
+
+select {
+    width: 20%;
+    border-radius: 2px;
 }

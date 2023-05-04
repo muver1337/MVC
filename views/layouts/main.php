@@ -8,21 +8,24 @@
 
     <title>Main site</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="/practic-pnss/public/css/style.css" rel="stylesheet" >
+    <link href="/public/css/style.css" rel="stylesheet" >
 </head>
 <body>
-<header>
+<header class="lol">
     <nav>
-        <a href="<?= app()->route->getUrl('/hello') ?>">Главная</a>
+        <a class="hello" href="<?= app()->route->getUrl('/hello') ?>">Главная</a>
         <?php
         if (!app()->auth::check()):
             ?>
-            <a href="<?= app()->route->getUrl('/login') ?>">Вход</a>
-            <a href="<?= app()->route->getUrl('/signup') ?>">Регистрация</a>
+            <a class="login" href="<?= app()->route->getUrl('/login') ?>">Войти</a>
         <?php
         else:
             ?>
-            <a href="<?= app()->route->getUrl('/logout') ?>">Выход (<?= app()->auth::user()->name ?>)</a>
+            <a class="reg" href="<?= app()->route->getUrl('/signup') ?>">Регистрация пользователя</a>
+            <a class="work" href="<?= app()->route->getUrl('/worker') ?>">Добавление сотрудников</a>
+            <a class="dis" href="<?= app()->route->getUrl('/discipline') ?>">Дисциплины</a>
+            <a class="pod" href="<?= app()->route->getUrl('/division') ?>">Подразделение</a>
+            <a class="logout" href="<?= app()->route->getUrl('/logout') ?>">Выход (<?= app()->auth::user()->name ?>)</a>
         <?php
         endif;
         ?>

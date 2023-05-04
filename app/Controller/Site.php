@@ -1,7 +1,9 @@
 <?php
 namespace Controller;
 
-use Model\Post;
+use Model\Worker;
+use Model\Division;
+use Model\Discipline;
 use Model\Role;
 use Model\User;
 use Src\Request;
@@ -11,11 +13,6 @@ use Src\Auth\Auth;
 
 class Site
 {
-    public function index(): string
-    {
-        $posts = Post::all();
-        return (new View())->render('site.post', ['posts' => $posts]);
-    }
 
     public function hello(): string
     {
@@ -45,10 +42,34 @@ class Site
         return new View('site.login', ['message' => 'Неправильные логин или пароль']);
     }
 
+    public function discipline(): string
+    {
+        $discipline = Discipline::all();
+        return new View('site.discipline', [
+            'discipline'=>$discipline,
+        ]);
+    }
+
+    public function division(): string
+    {
+        $division = Division::all();
+        return new View('site.division', [
+            'division'=>$division,
+        ]);
+    }
+
+    public function worker(): string
+    {
+        $worker = Worker::all();
+        return new View('site.worker', [
+            'worker'=>$worker,
+        ]);
+    }
+
     public function logout(): void
     {
         Auth::logout();
-        app()->route->redirect('/hello');
+        app()->route->redirect('/login');
     }
 
 
