@@ -6,7 +6,7 @@
                 <?php
                 foreach ($division as $div) {
                     ?>
-                    <option value="<?= $div->division ?>"><?= $div->discipline ?></option>
+                    <option value="<?= $div->name ?>"><?= $div->name ?></option>
                 <?php }
                 ?>
             </select>
@@ -28,7 +28,7 @@
         <div>
             <div>
             <label>Название подразделения <br><input type="text" name="newdiv"></label> <button class="buttonn">Добавить</button>
-                <p>Дисциплины</p>
+                <p class="rabotay">Дисциплины</p>
                 <div class="listback2">
                     <?php
                     foreach ($worker as $wor) {

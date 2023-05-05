@@ -53,6 +53,12 @@ class Middleware
         return $request;
     }
 
+    private function getMiddlewaresForRoute(string $httpMethod, string $uri): array
+    {
+        $dispatcherMiddleware = new Dispatcher($this->middlewareCollector->getData());
+        return $dispatcherMiddleware->dispatch($httpMethod, $uri)[1] ?? [];
+    }
+
 //Запуск всех глобальных middlewares
     private function runAppMiddlewares(Request $request): Request
     {

@@ -14,48 +14,6 @@ a {
     color: black;
 }
 
-.login {
-    position: absolute;
-    top: 16px;
-}
-
-.hello {
-    width: 64px;
-    position: absolute;
-    margin-left: 1%;
-    text-align: center;
-    top: 16px;
-}
-
-.reg {
-    position: absolute;
-    margin-left: 7%;
-    top: 16px;
-}
-
-.logout {
-    top: 16px;
-    position: absolute;
-    margin-left: 7%;
-}
-
-.dis {
-    top: 16px;
-    position: absolute;
-    margin-left: 34%;
-}
-
-.work {
-    top: 16px;
-    position: absolute;
-    margin-left: 21%;
-}
-
-.pod {
-    top: 16px;
-    position: absolute;
-    margin-left: 41%;
-}
 
 .forms {
     margin-left: 43%;
@@ -101,9 +59,6 @@ div>h1 {
     margin-left: 2%;
 }
 
-header>nav>a:last-child {
-    margin-left: 85%;
-}
 
 .role {
     width: 100px;
@@ -160,7 +115,7 @@ margin-left: 5%;
 
 div>div>label {
     margin-top: 5%;
-    width: 200px;
+    width: 300px;
     display: block;
 }
 
@@ -185,15 +140,48 @@ div>div>button {
 .listback2 {
     background-color: white;
     border: black solid 1px;
-    width: 70%;
+    width: 300%;
     height: 500px;
     border-radius: 5px;
     padding-left: 5px;
-    margin-top: 3%;
+    margin-top: 4%;
 }
 
 .buttonn {
-    margin-top: -4.5%;
+    margin-top: -13.5%;
     height: 35px;
+    margin-left:205%;
 }
 
+.rabotay {
+    margin-top: 15%;
+}
+
+header>nav {
+    display: block;
+    width: 1900px;
+    margin-top: 1%;
+}
+
+.worker {
+    display: flex;
+    width: 1000px;
+}
+
+.center {
+    margin-left: 30%;
+    margin-top: 10%;
+}
+
+.button {
+    border-radius: 5px;
+    margin-left: 17%;
+}
+
+div>div>div>label {
+    width: 150px;
+}
+
+div>h1 {
+    margin-left: 17%;
+}

@@ -28,7 +28,7 @@ class Site
 
             $validator = new Validator($request->all(), [
                 'login' => ['required', 'unique:users,login'],
-                'role' =>['required'],
+                'role_id' =>['required'],
                 'password' => ['required']
             ], [
                 'required' => 'Поле :field пусто',
@@ -46,7 +46,7 @@ class Site
         }
 
         $roles = Role::all();
-        if ($request->method === 'POST' && User::create($request->all())) {
+        if ($request->method === 'POST') {
             app()->route->redirect('/hello');
         }
         return new View('site.signup', ['roles' => $roles]);
