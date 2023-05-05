@@ -66,16 +66,28 @@ class Site
         return new View('site.login', ['message' => 'Неправильные логин или пароль']);
     }
 
-    public function discipline(): string
+    public function discipline(Request $request): string
     {
+        if($request->method === 'POST') {
+            $paylod = $request->all();
+//            var_dump($paylod);die();
+            Discipline::create(['discipline' => $paylod['discipline'], 'division_id' => $paylod['division_id']]);
+        }
+        $divisionn=Division::all();
         $discipline = Discipline::all();
         return new View('site.discipline', [
             'discipline' => $discipline,
+            'divisionn' => $divisionn
         ]);
     }
 
-    public function division(): string
+    public function division(Request $request): string
     {
+        if($request->method === 'POST') {
+            $payload = $request->all();
+            $divisionn = $payload['division'];
+            Division::create(['name' => $divisionn]);
+        }
         $division = Division::all();
         return new View('site.division', [
             'division' => $division,

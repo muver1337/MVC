@@ -27,7 +27,10 @@
         <h6 class="newdiv"> Добавить подразделение: </h6>
         <div>
             <div>
-            <label>Название подразделения <br><input type="text" name="newdiv"></label> <button class="buttonn">Добавить</button>
+                <form action="<?php app()->route->getUrl('/division'); ?>" method="post">
+                    <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
+                    <label>Название подразделения <br><input class="podrazdelenie" type="text" name="division"></label> <button type="submit" class="buttonn">Добавить</button>
+                </form>
                 <p class="rabotay">Дисциплины</p>
                 <div class="listback2">
                     <?php

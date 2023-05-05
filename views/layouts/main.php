@@ -33,7 +33,7 @@ use Src\Auth\Auth;
             <a class="work" href="<?= app()->route->getUrl('/worker') ?>">Добавление сотрудников</a> &emsp;
             <a class="dis" href="<?= app()->route->getUrl('/discipline') ?>">Дисциплины</a> &emsp;
             <a class="pod" href="<?= app()->route->getUrl('/division') ?>">Подразделение</a> &emsp;
-            <a class="logout" href="<?= app()->route->getUrl('/logout') ?>">Выход (<?= app()->auth::user()->name ?>)</a>
+            <a class="logout" href="<?= app()->route->getUrl('/logout') ?>">Выход (<?= app()->auth::user()->login ?>)</a>
         <?php
         endif;
         ?>

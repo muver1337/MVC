@@ -16,7 +16,7 @@ class Discipline extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'qualification',
+        'division_id',
         'discipline'
     ];
 }

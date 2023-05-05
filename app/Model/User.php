@@ -39,7 +39,7 @@ class User extends Model implements IdentityInterface
         return $this->id;
     }
 
-    public function role()
+    public function role(): BelongsTo
     {
         return $this->belongsTo(Role::class, 'role_id', 'id');
     }
@@ -48,5 +48,11 @@ class User extends Model implements IdentityInterface
     {
         return self::where([ 'login' => $credentials['login'],
             'password' => md5($credentials['password'])])->first();
+    }
+
+
+    public function hasRole($roles): bool
+    {
+        return in_array($this->role->name, $roles);
     }
 }

@@ -40,7 +40,7 @@ button {
 }
 
 label {
-    width: 100px;
+    width: 200px;
 }
 
 .auth {
@@ -79,6 +79,7 @@ div>h1 {
 select {
     width: 50%;
     border-radius: 2px;
+    height: 35px;
 }
 
 .alr {
@@ -144,17 +145,16 @@ div>div>button {
     height: 500px;
     border-radius: 5px;
     padding-left: 5px;
-    margin-top: 4%;
 }
 
 .buttonn {
     margin-top: -13.5%;
-    height: 35px;
-    margin-left:205%;
+    height: 36px;
+    margin-left:175%;
 }
 
 .rabotay {
-    margin-top: 15%;
+    margin-top: 10%;
 }
 
 header>nav {
@@ -184,4 +184,18 @@ div>div>div>label {
 
 div>h1 {
     margin-left: 17%;
+}
+.image{
+    width: 2000px;
+    height: 900px;
+    background-image: url("cat.gif");
+}
+
+.podrazdelenie {
+    width: 450px;
+    height: 40px;
+}
+
+.buttonnn {
+    margin-top: 5%;
 }
