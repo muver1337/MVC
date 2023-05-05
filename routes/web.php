@@ -8,8 +8,8 @@ Route::add(['GET', 'POST'], '/signup', [Controller\Site::class, 'signup']);
 Route::add(['GET', 'POST'], '/login', [Controller\Site::class, 'login']);
 Route::add('GET', '/logout', [Controller\Site::class, 'logout']);
 Route::add(['GET', 'POST'], '/discipline', [Controller\Site::class, 'discipline'])
-    ->middleware('auth', 'can:Админ');;
+    ->middleware('auth');
 Route::add(['GET', 'POST'], '/division', [Controller\Site::class, 'division'])
-    ->middleware('auth', 'can:Админ');;
-Route::add('GET', '/worker', [Controller\Site::class, 'worker'])
-    ->middleware('auth', 'can:Админ');;
+    ->middleware('auth');
+Route::add(['GET', 'POST'], '/worker', [Controller\Site::class, 'worker'])
+    ->middleware('auth');

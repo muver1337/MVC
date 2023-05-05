@@ -17,12 +17,12 @@ class Worker extends Model
 
     protected $fillable = [
         'name',
-        'family_name',
-        'middle_name',
+        'family',
+        'middle',
         'gender',
-        'date_birth',
+        'date',
         'address',
-        'position_id',
+        'discipline_id',
         'division_id'
     ];
 }

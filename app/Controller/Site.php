@@ -28,7 +28,7 @@ class Site
 
             $validator = new Validator($request->all(), [
                 'login' => ['required', 'unique:users,login'],
-                'role_id' =>['required'],
+                'role_id' => ['required'],
                 'password' => ['required']
             ], [
                 'required' => 'Поле :field пусто',
@@ -66,24 +66,9 @@ class Site
         return new View('site.login', ['message' => 'Неправильные логин или пароль']);
     }
 
-    public function discipline(Request $request): string
-    {
-        if($request->method === 'POST') {
-            $paylod = $request->all();
-//            var_dump($paylod);die();
-            Discipline::create(['discipline' => $paylod['discipline'], 'division_id' => $paylod['division_id']]);
-        }
-        $divisionn=Division::all();
-        $discipline = Discipline::all();
-        return new View('site.discipline', [
-            'discipline' => $discipline,
-            'divisionn' => $divisionn
-        ]);
-    }
-
     public function division(Request $request): string
     {
-        if($request->method === 'POST') {
+        if ($request->method === 'POST') {
             $payload = $request->all();
             $divisionn = $payload['division'];
             Division::create(['name' => $divisionn]);
@@ -94,21 +79,42 @@ class Site
         ]);
     }
 
-    public function worker(): string
+    public function discipline(Request $request): string
     {
+        if ($request->method === 'POST') {
+            $paylod = $request->all();
+            Discipline::create(['discipline' => $paylod['discipline'], 'division_id' => $paylod['division_id']]);
+        }
+        $divisionn = Division::all();
+        $discipline = Discipline::all();
+        return new View('site.discipline', [
+            'discipline' => $discipline,
+            'divisionn' => $divisionn
+        ]);
+    }
+
+    public function worker(Request $request): string
+    {
+        if ($request->method === 'POST') {
+            $temp = $request->all();
+            Worker::create([$request => all()]);
+        }
+        $divisionn = Division::all();
+        $discipline = Discipline::all();
         $worker = Worker::all();
         return new View('site.worker', [
+            'discipline' => $discipline,
+            'divisionn' => $divisionn,
             'worker' => $worker,
         ]);
     }
 
-    public function logout(): void
-    {
-        Auth::logout();
-        app()->route->redirect('/login');
+        public
+        function logout(): void
+        {
+            Auth::logout();
+            app()->route->redirect('/login');
+        }
     }
-
-
-}
 
 

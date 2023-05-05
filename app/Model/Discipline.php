@@ -17,6 +17,7 @@ class Discipline extends Model
 
     protected $fillable = [
         'division_id',
-        'discipline'
+        'discipline',
+        'worker_id',
     ];
 }

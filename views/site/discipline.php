@@ -15,9 +15,9 @@
             <h6>Сотрудники</h6>
             <div class="listback">
                 <?php
-                foreach ($worker as $wor) {
+                foreach ($discipline as $disciplinee) {
                     ?>
-                    <li value="<?= $wor->id ?>"><?= $wor->discipline_id ?></li>
+                    <option value="<?= $disciplinee->id ?>"><?= $disciplinee->name ?></option>
                 <?php }
                 ?>
             </div>
@@ -28,8 +28,8 @@
         <form action="<?php app()->route->getUrl('/discipline'); ?>" method="post">
             <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
             <label>Новая дисциплина <br><input class="podrazdelenie" type="text" name="discipline"></label> <button type="submit" class="buttonn">Добавить</button>
-            <label for="division_id">Подразделение</label><br>
-            <select class="forms2" aria-label="Default select example" name="division_id">
+            <label for="division_id">Подразделение:</label><br>
+                <select class="forms2" aria-label="Default select example" name="division_id">
                 <?php
                 foreach ($divisionn as $division) {
                     ?>
