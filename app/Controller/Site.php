@@ -74,9 +74,11 @@ class Site
         }
         $division = Division::all();
         $discipline = Discipline::all();
+        $worker = Worker::all();
         return new View('site.division', [
             'division' => $division,
             'discipline' => $discipline,
+            'worker' => $worker,
         ]);
     }
 

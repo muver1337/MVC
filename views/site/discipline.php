@@ -15,9 +15,9 @@
             <h6>Сотрудники</h6>
             <div class="listback">
                 <?php
-                foreach ($discipline as $disciplinee) {
+                foreach ($worker as $worke) {
                     ?>
-                    <option value="<?= $disciplinee->id ?>"><?= $disciplinee->worker_id ?></option>
+                    <option value="<?= $worke->id ?>"><?= $worke->family. ' '.$worke->name. ' '. $worke->middle. '  ' .$worke->date ?></option>
                 <?php }
                 ?>
             </div>
@@ -29,7 +29,7 @@
             <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
             <label>Новая дисциплина <br><input class="podrazdelenie" type="text" name="discipline"></label> <button type="submit" class="buttonn">Добавить</button>
             <label for="division_id">Подразделение:</label><br>
-                <select class="forms2" aria-label="Default select example" name="division_id">
+                <select class="forms5" aria-label="Default select example" name="division_id">
                 <?php
                 foreach ($divisionn as $division) {
                     ?>

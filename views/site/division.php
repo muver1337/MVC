@@ -6,7 +6,7 @@
                 <?php
                 foreach ($division as $div) {
                     ?>
-                    <option value="<?= $div->id ?>"><?= $div->name ?></option>
+                    <option value="<?= $div->id ?>"><?= $div->name; ?></option>
                 <?php }
                 ?>
             </select>
@@ -17,7 +17,7 @@
                 <?php
                 foreach ($worker as $worke) {
                     ?>
-                    <option value="<?= $worke->id ?>"><?= $worke->name ?></option>
+                    <option value="<?= $worke->id ?>"><?= $worke->family. ' '.$worke->name. ' '. $worke->middle. '  ' .$worke->date ?></option>
                 <?php }
                 ?>
             </div>

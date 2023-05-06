@@ -26,9 +26,10 @@ a {
 
 .forms2 {
     width: 70%;
-    height: 30px;
+    height: 35px;
     display: flex;
     flex-direction: column;
+    padding-top: 5px;
 }
 
 
@@ -40,6 +41,7 @@ button {
 }
 
 label {
+    margin-top: 15px;
     width: 200px;
 }
 
@@ -131,7 +133,7 @@ div>div>button {
 }
 
 .newdiv {
-    margin-top: 0%;
+    margin-top: -3%;
 }
 
 .listback2 {
@@ -203,4 +205,12 @@ div>h1 {
 
 div>div>div>form>label {
     border-radius: 5px;
+}
+
+.forms5 {
+    width: 90%;
+    height: 35px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
 }
