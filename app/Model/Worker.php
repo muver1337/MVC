@@ -21,8 +21,9 @@ class Worker extends Model
         'middle',
         'gender',
         'date',
-        'address',
+        'addres',
         'discipline_id',
         'division_id'
     ];
 }
+

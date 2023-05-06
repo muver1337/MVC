@@ -70,12 +70,13 @@ class Site
     {
         if ($request->method === 'POST') {
             $payload = $request->all();
-            $divisionn = $payload['division'];
-            Division::create(['name' => $divisionn]);
+            Division::create($request->all());
         }
         $division = Division::all();
+        $discipline = Discipline::all();
         return new View('site.division', [
             'division' => $division,
+            'discipline' => $discipline,
         ]);
     }
 
@@ -83,21 +84,22 @@ class Site
     {
         if ($request->method === 'POST') {
             $paylod = $request->all();
-            Discipline::create(['discipline' => $paylod['discipline'], 'division_id' => $paylod['division_id']]);
+            Discipline::create(['discipline' => $paylod['discipline'], 'division_id' => $paylod['division_id'],'worker_id'=>$paylod['worker_id']]);
         }
+        $worker = Worker::all();
         $divisionn = Division::all();
         $discipline = Discipline::all();
         return new View('site.discipline', [
             'discipline' => $discipline,
-            'divisionn' => $divisionn
+            'divisionn' => $divisionn,
+            'worker' => $worker,
         ]);
     }
 
     public function worker(Request $request): string
     {
         if ($request->method === 'POST') {
-            $temp = $request->all();
-            Worker::create([$request => all()]);
+            Worker::create($request -> all());
         }
         $divisionn = Division::all();
         $discipline = Discipline::all();

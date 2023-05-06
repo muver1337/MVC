@@ -17,7 +17,7 @@
                 <?php
                 foreach ($discipline as $disciplinee) {
                     ?>
-                    <option value="<?= $disciplinee->id ?>"><?= $disciplinee->name ?></option>
+                    <option value="<?= $disciplinee->id ?>"><?= $disciplinee->worker_id ?></option>
                 <?php }
                 ?>
             </div>

@@ -10,16 +10,16 @@
             <label>Отчество <input type="text" name="middle"></label>
             <label>Пол <input type="text" name="gender"></label><br>
             <label>Дата рождения<input type="date" name="date"></label>
-            <label>Адрес прописки<input type="text" name="adres"></label><br>
+            <label>Адрес прописки<input type="text" name="addres"></label><br>
                 <label for="disciplin_id">Дисциплина:</label><br>
-                <select name="disciplin_id">
+                <select name="discipline_id">
                     <?php
                     foreach ($discipline as $disciplin) {
                         ?>
-                        <option value="<?= $disciplin->id ?>"><?= $disciplin->name ?></option>
+                        <option value="<?= $disciplin->id ?>"><?= $disciplin->discipline ?></option>
                     <?php }
                     ?>
-                </select>
+                </select> <br>
                 <label for="division_id">Подразделение:</label><br>
                 <select name="division_id">
                     <?php

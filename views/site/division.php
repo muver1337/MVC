@@ -6,7 +6,7 @@
                 <?php
                 foreach ($division as $div) {
                     ?>
-                    <option value="<?= $div->name ?>"><?= $div->name ?></option>
+                    <option value="<?= $div->id ?>"><?= $div->name ?></option>
                 <?php }
                 ?>
             </select>
@@ -29,15 +29,15 @@
             <div>
                 <form action="<?php app()->route->getUrl('/division'); ?>" method="post">
                     <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
-                    <label>Название подразделения <br><input class="podrazdelenie" type="text" name="division"></label>
+                    <label>Название подразделения <br><input class="podrazdelenie" type="text" name="name"></label>
                     <button type="submit" class="buttonn">Добавить</button>
                 </form>
-                <p class="rabotay">Дисциплины</p>
+                <p class="rabotay">Дисциплины:</p><br>
                 <div class="listback2">
                     <?php
-                    foreach ($discipline as $wor) {
+                    foreach ($discipline as $discip) {
                         ?>
-                        <li value="<?= $wor->id ?>"><?= $wor->discipline_id ?></li>
+                        <option value="<?= $discip->id ?>"><?= $discip->discipline ?></option>
                     <?php }
                     ?>
                 </div>
