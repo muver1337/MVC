@@ -84,11 +84,24 @@ class Site
 
     public function discipline(Request $request): string
     {
+        $worker = Worker::all();
         if ($request->method === 'POST') {
             $paylod = $request->all();
-            Discipline::create(['discipline' => $paylod['discipline'], 'division_id' => $paylod['division_id'],'worker_id'=>$paylod['worker_id']]);
+            if(!empty($paylod['type'])) {
+                $type = $paylod['type'];
+                if($type === 'add') {
+                    Discipline::create([
+                        'discipline' => $paylod['discipline'],
+                        'division_id' => $paylod['division_id'],
+                        'worker_id'=>$paylod['worker_id']
+                    ]);
+                }
+
+                if($type === 'search') {
+                    $worker = Worker::where('name', 'like', "{$paylod['name']}%")->get();
+                }
+            }
         }
-        $worker = Worker::all();
         $divisionn = Division::all();
         $discipline = Discipline::all();
         return new View('site.discipline', [

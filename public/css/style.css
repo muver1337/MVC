@@ -214,3 +214,11 @@ div>div>div>form>label {
     flex-direction: column;
     padding-top: 5px;
 }
+
+.search-btn {
+    margin-left: 270px;
+    height: 35px;
+    width: 80px;
+    margin-top: -34px;
+    border-radius: 5px;
+}
